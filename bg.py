@@ -8,48 +8,32 @@ from brachiograph import BrachioGraph
 # angle/pulse-width values as described in "Improve the plotter calibration".
 
 
-# angles in degrees and corresponding pulse-widths for the two arm servos
-
-servo_1_angle_pws1 = [
-    [-162, 2470],
-    [-144, 2250],
-    [-126, 2050],
-    [-108, 1860],
-    [ -90, 1690],
-    [ -72, 1530],
-    [ -54, 1350],
-    [ -36, 1190],
-    [ -18, 1010],
-    [   0,  840],
-    [  18,  640],
-]
-
-servo_2_angle_pws2 = [
-    [  0,  660],
-    [ 18,  840],
-    [ 36, 1030],
-    [ 54, 1180],
-    [ 72, 1340],
-    [ 90, 1490],
-    [108, 1640],
-    [126, 1830],
-    [144, 2000],
-    [162, 2200],
-    [180, 2410],
-]
+# angles in degrees and# corresponding pulse-widths for the two arm servos
+servo_1_angle_pws=[[-90.0, 2400], [-72.0, 2170], [-54.0, 1980], [-36.0, 1770], [-18.0, 1570], [0.0, 1381], [18.0, 1171], [36.0, 1005], [54.0, 815], [72.0, 645], [90.0, 509]]
+servo_2_angle_pws=[[0.0, 530], [18.0, 680], [36.0, 880], [54.0, 1040], [72.0, 1260], [90.0, 1480], [108.0, 1690], [126.0, 1920]]
 
 bg = BrachioGraph(
     # the lengths of the arms
     inner_arm=8,
     outer_arm=8,
     # the drawing area
-    bounds=(-8, 4, 8, 13),
+    #bounds=(-12, 4, -4, 12),
+    #bounds=(6, 6, 8, 8),
+    bounds=(-2, 6, 8, 13),
+    #bounds=(-1, 9, 3, 13),
+    # 8 x 7
     # angles in degrees and corresponding pulse-widths for the two arm servos
-    servo_1_angle_pws=servo_1_angle_pws1,
-    servo_2_angle_pws=servo_2_angle_pws2,
+    servo_1_angle_pws=servo_1_angle_pws,
+    servo_2_angle_pws=servo_2_angle_pws,
     # pulse-widths for pen up/down
-    pw_down=1200,
-    pw_up=1850,
+    pw_up=1290,
+    pw_down=1420,
+    hysteresis_correction_1=0,
+    hysteresis_correction_2=0,
+    #servo_1_centre=1500,
+    #servo_2_centre=1526,
+    #servo_1_degree_ms=-10,
+    #servo_2_degree_ms=10,
 )
 
 
