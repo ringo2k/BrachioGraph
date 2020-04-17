@@ -38,6 +38,8 @@ def image_to_json(
         draw_contours, repeat_contours,
         draw_hatch, repeat_hatch,
         )
+    
+
 
     filename = json_folder + image_filename + ".json"
     lines_to_file(lines, filename)
@@ -143,7 +145,33 @@ def vectorise(
         segments = segments + len(line)
     print(len(lines), "strokes,", segments, "points.")
     print("done.")
+
+    # sort xy direction
+    print("sorting")
+    startXCoordinates = []
+    startYCoordinates = []
+    for line in lines:
+        print(line)
+        startx = line[0][0]
+        starty = line[0][1]
+        startXCoordinates.append(startx)
+        startYCoordinates.append(starty)
+    
+    print (max(startXCoordinates))
+    print (max(startYCoordinates))
+
+    newLines = []
+    for coordinate in range(0, max(startYCoordinates)):
+        for line in lines:
+            searchCoordinate = line[0][1]
+            if searchCoordinate == coordinate:
+                newLines.append(line)
+    
+    for line in newLines:
+        print(line)
+
     return lines
+    #return newLines
 
 
 # -------------- vectorisation options --------------
