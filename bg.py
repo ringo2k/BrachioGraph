@@ -19,7 +19,8 @@ bg = BrachioGraph(
     # the drawing area
     #bounds=(-12, 4, -4, 12),
     #bounds=(6, 6, 8, 8),
-    bounds=(-2, 6, 8, 13),
+    # this results in 10x7
+    bounds=(-2, 6, 7, 13),
     #bounds=(-1, 9, 3, 13),
     # 8 x 7
     # angles in degrees and corresponding pulse-widths for the two arm servos
@@ -27,7 +28,7 @@ bg = BrachioGraph(
     servo_2_angle_pws=servo_2_angle_pws,
     # pulse-widths for pen up/down
     pw_up=1290,
-    pw_down=1420,
+    pw_down=1390,
     hysteresis_correction_1=0,
     hysteresis_correction_2=0,
     #servo_1_centre=1500,
